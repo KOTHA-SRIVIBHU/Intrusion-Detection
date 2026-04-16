@@ -27,13 +27,7 @@ print("="*80)
 X = pd.read_csv('combined_features.csv')
 print(f"Features shape: {X.shape}")
 
-# We need the original labels for comparison. They are in the same order as rows in combined_features.csv.
-# Since we saved combined_features.csv from the original df_raw, we can reload the raw data to get labels.
-# Alternatively, we saved y_all earlier. For simplicity, reload a small portion of original data to get labels.
-# But easier: during preprocessing we had y_all. To avoid re-running, we'll load from the saved combined_features.csv
-# and also load the original raw combined data to extract labels (same order). 
-# Actually, combined_features.csv was created from X_combined which had the same index as y_all.
-# We'll just reload the first 60k rows of original CSVs to get labels (same order as we concatenated).
+
 
 print("Reloading original labels (from first 20k each)...")
 files = {
@@ -79,7 +73,7 @@ plt.savefig('elbow_plot.png', dpi=150)
 plt.close()
 print("Saved: elbow_plot.png")
 
-# Choose k=5 (since we have 5 attack classes? Actually we have 5 distinct labels including Benign)
+# Choose k=5 
 k_optimal = 5
 print(f"Using k = {k_optimal} clusters")
 

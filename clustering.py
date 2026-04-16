@@ -94,7 +94,7 @@ plt.savefig('clustering_elbow.png', dpi=150)
 plt.close()
 print("Saved: clustering_elbow.png")
 
-# Choose K with highest silhouette (or based on elbow)
+
 best_k = K_range[np.argmax(sil_scores)]
 print(f"\nBest K based on silhouette score: {best_k}")
 

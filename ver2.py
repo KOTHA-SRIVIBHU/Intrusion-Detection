@@ -296,9 +296,7 @@ print(comparison_df.round(4))
 comparison_df.to_csv('model_comparison_both_features.csv')
 print("\nSaved: model_comparison_both_features.csv")
 
-# ================================
-# 10. SHAP EXPLAINABILITY (fixed force plot)
-# ================================
+
 # ================================
 # 10. SHAP EXPLAINABILITY (summary only)
 # ================================
