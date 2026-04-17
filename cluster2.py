@@ -133,6 +133,10 @@ plt.subplot(1,2,2)
 from sklearn.preprocessing import LabelEncoder
 le = LabelEncoder()
 y_numeric = le.fit_transform(y)
+# Print label mapping
+print("\nLabel mapping (numeric → original):")
+for i, label in enumerate(le.classes_):
+    print(f"  {i} → {label}")
 scatter2 = plt.scatter(X_pca[:,0], X_pca[:,1], c=y_numeric, cmap='tab10', alpha=0.6, s=10)
 plt.colorbar(scatter2, label='True Attack Class')
 plt.title('True Labels (PCA projection)')

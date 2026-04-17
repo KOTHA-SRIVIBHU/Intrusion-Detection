@@ -111,7 +111,9 @@ cluster_labels = kmeans_final.fit_predict(X_scaled)
 from sklearn.preprocessing import LabelEncoder
 le = LabelEncoder()
 y_encoded = le.fit_transform(y)
-
+print("\nLabel mapping (numeric → original):")
+for i, label in enumerate(le.classes_):
+    print(f"  {i} → {label}")
 ari = adjusted_rand_score(y_encoded, cluster_labels)
 nmi = normalized_mutual_info_score(y_encoded, cluster_labels)
 print(f"Adjusted Rand Index (ARI): {ari:.4f}")
